@@ -1,6 +1,9 @@
-package com.ecomerce.proyecto.model.entity;
+package com.ecomerce.proyecto.producto;
 
 import java.util.List;
+
+import com.ecomerce.proyecto.model.entity.DetalleOrden;
+import com.ecomerce.proyecto.model.entity.Usuario;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

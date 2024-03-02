@@ -1,5 +1,7 @@
 package com.ecomerce.proyecto.model.entity;
 
+import com.ecomerce.proyecto.producto.Producto;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
