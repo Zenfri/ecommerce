@@ -46,4 +46,17 @@ public class Usuario {
 
     @OneToMany(mappedBy = "oUsuario")
     private List<Orden> lOrdenes;
+
+    public Usuario(Long id, String nombre, String email, String direccion, String telefono, String tipo, String usuario,
+            String clave) {
+        this.id = id;
+        this.nombre = nombre;
+        this.email = email;
+        this.direccion = direccion;
+        this.telefono = telefono;
+        this.tipo = tipo;
+        this.usuario = usuario;
+        this.clave = clave;
+        
+    }
 }

@@ -2,6 +2,8 @@ package com.ecomerce.proyecto.producto;
 
 import java.util.List;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import com.ecomerce.proyecto.model.entity.DetalleOrden;
 import com.ecomerce.proyecto.model.entity.Usuario;
 
@@ -32,12 +34,12 @@ public class Producto {
     private String nombre;
     @Column(name="prod_descripcion")
     private String descripcion;
-    @Column(name="prod_imagen")
-    private String imagen;
     @Column(name="prod_precio")
     private String precio;
     @Column(name="prod_stock")
     private String stock;
+    @Column(name="prod_imagen")
+    private String imagen;
     @ManyToOne
     @JoinColumn(name="id_usuario")
     private Usuario oUsuario;

@@ -1,5 +1,6 @@
 package com.ecomerce.proyecto.producto;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,11 @@ public class ProductoServiceImpl implements IProductoService{
 
     @Autowired
     private IProductoDAO oIProductoDAO;
+
+    @Override
+    public List<Producto> listarProductos() {
+        return oIProductoDAO.findAll();
+    }
 
     @Override
     public void guardarProducto(Producto oProducto) {
@@ -30,5 +36,5 @@ public class ProductoServiceImpl implements IProductoService{
     public void eliminarProducto(Long id) {
         oIProductoDAO.deleteById(id);
     }
-    
+
 }
