@@ -18,9 +18,12 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
@@ -46,4 +49,11 @@ public class Producto {
 
     @OneToMany(mappedBy = "oProducto")
     private List<DetalleOrden> lDetalleOrdenes;
+
+    @Override
+    public String toString() {
+        return "Producto [id=" + id + ", nombre=" + nombre + ", descripcion=" + descripcion + ", precio=" + precio
+                + ", stock=" + stock + ", imagen=" + imagen + ", oUsuario id=" + oUsuario.getId() + "]";
+    }
+
 }

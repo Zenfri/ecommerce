@@ -11,16 +11,16 @@
   <title>Productos</title>
 
   <!-- Bootstrap core CSS -->
-  <link th:href="@{vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+  <link th:href="@{/vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
   <!-- Custom styles for this template -->
-  <link th:href="@{css/heroic-features.css}" rel="stylesheet">
+  <link th:href="@{/css/heroic-features.css}" rel="stylesheet">
 
 </head>
 
 <body>
 
   <!-- Navigation -->
-  <div th:replace="/administrador/template :: header"></div>
+  <div th:replace="~{/administrador/template :: header}"></div>
 
   <!-- Page Content -->
   <div class="container">
@@ -41,6 +41,7 @@
     <table class="table">
       <thead>
         <tr>
+          <th scope="col">Número</th>
           <th scope="col">Nombre</th>
           <th scope="col">Descripción</th>
           <th scope="col">Inventario</th>
@@ -50,13 +51,14 @@
         </tr>
       </thead>
       <tbody>
-        <tr th:each="producto: ${lProductos}">
+        <tr th:each="producto, estado: ${lProductos}">
+          <td th:text="${estado.count}"></td>
           <td th:text="${producto.nombre}"></td>
           <td th:text="${producto.descripcion}"></td>
           <td th:text="${producto.stock}"></td>
           <td th:text="${producto.precio}"></td>
-          <td><a class="btn btn-warning" href="">Editar</a> </td>
-          <td><a class="btn btn-danger" href="">Eliminar</a> </td>
+          <td><a th:href="@{/productos/editar/{id}(id=${producto.id})}" class="btn btn-warning">Editar</a> </td>
+          <td><a th:href="@{/productos/eliminar/{id}(id=${producto.id})}"class="btn btn-danger" href="">Eliminar</a> </td>
         </tr>
       </tbody>
     </table>
@@ -65,10 +67,10 @@
   <!-- /.container -->
 
   <!-- Footer -->
-  <div th:replace="/administrador/template :: footer"></div>
+  <div th:replace="~{/administrador/template :: footer}"></div>
 
   <!-- Bootstrap core JavaScript -->
-  <div th:replace="/administrador/template :: librerias"></div>
+  <div th:replace="~{/administrador/template :: librerias}"></div>
 
 </body>
 
